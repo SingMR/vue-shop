@@ -1,0 +1,1 @@
+// .prettierrc 格式化文档 semi取消分号  singleQuote单引号
