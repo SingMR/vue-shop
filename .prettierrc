@@ -1,4 +1,3 @@
-// 格式化文档 semi取消分号  singleQuote单引号
 {
     "semi":false,
     "singleQuote":true

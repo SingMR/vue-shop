@@ -49,8 +49,11 @@ export default {
         }
     },
     methods:{
+        // 提交表单
         submitForm(formName) {
+            // 表单预验证
         this.$refs[formName].validate( async valid => {
+            // valid 为boolean
           if (valid) {
             const {data:res} = await this.$http.post('login',this.loginForm);
             if(res.meta.status != 200) return this.$message.error('错了哦,登录失败')                       
@@ -66,6 +69,7 @@ export default {
           }
         });
         },
+        // 重置表单
         resetForm(formName) {
             this.$refs[formName].resetFields();
       }
