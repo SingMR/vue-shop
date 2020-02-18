@@ -86,6 +86,7 @@ export default {
         // 保存链接的激活状态
         saveNavState(activePath) {
             window.sessionStorage.setItem('activePath',activePath);
+            // 点击后高亮显示
             this.activePath = activePath;
         }
     } 
