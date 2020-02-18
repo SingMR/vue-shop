@@ -65,10 +65,11 @@
         <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
         <el-table-column label="操作" width="350px">
           <template slot-scope="scope">
-            <el-button type="primary" icon="el-icon-edit">编辑</el-button>
-            <el-button type="danger" icon="el-icon-share">删除</el-button>
+            <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
+            <el-button type="danger" icon="el-icon-share" size="mini">删除</el-button>
             <el-button
               type="warning"
+              size="mini"
               icon="el-icon-setting"
               @click="showSetRigthDialog(scope.row)"
             >分配权限</el-button>
@@ -187,9 +188,7 @@ export default {
         ...this.$refs.treeRef.getHalfCheckedKeys()
       ]
       const idStr = keys.join(',');
-      const {data:res} = await this.$http.post('roles/'+this.roleId+'/rights',{rids:idStr});
-      console.log(res);
-      
+      const {data:res} = await this.$http.post('roles/'+this.roleId+'/rights',{rids:idStr});   
       if(res.meta.status != 200){
         return this.$message.error('添加权限失败')
       }

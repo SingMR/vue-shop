@@ -154,7 +154,7 @@ export default {
         query: '',
         // 当前的页数
         pagenum: 1,
-        pagesize: 2
+        pagesize: 3
       },
       userlist: [],
       total: 0,
@@ -315,7 +315,7 @@ export default {
       this.getUserList();
       this.$message.success('分配角色成功')
     },
-    // 监听分配角色对话框关闭事件 再次打开，显示为空
+    // 监听分配角色2对话框关闭事件 再次打开，显示为空
     setRoleDialogClosed() {
       // this.roleslist = [];
       this.selectRoleId = ''
