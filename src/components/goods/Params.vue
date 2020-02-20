@@ -366,19 +366,22 @@ export default {
       })
     },
     // 删除tag标签
-    tagClosed(row,i) {
-        row.attr_vals.splice(i,1);
-        this.saveAttrVals(row)
+    tagClosed(row, i) {
+      row.attr_vals.splice(i, 1)
+      this.saveAttrVals(row)
     },
     // 对attr_vals的操作，保存到数据库
     async saveAttrVals(row) {
-         const {data:res} = await this.$http.put(`categories/${this.cateId}/attributes/${row.attr_id}`, {
-        attr_name: row.attr_name,
-        attr_sel: row.attr_sel,
-        attr_vals:row.attr_vals.join(' ')
-      })
-      if(res.meta.status != 200) {
-          return this.$message.error('修改参数失败')
+      const { data: res } = await this.$http.put(
+        `categories/${this.cateId}/attributes/${row.attr_id}`,
+        {
+          attr_name: row.attr_name,
+          attr_sel: row.attr_sel,
+          attr_vals: row.attr_vals.join(' ')
+        }
+      )
+      if (res.meta.status != 200) {
+        return this.$message.error('修改参数失败')
       }
       this.$message.success('修改参数成功')
     }
@@ -419,9 +422,7 @@ export default {
 .el-tabs {
   margin-top: 20px;
 }
-.el-tag {
-  margin: 0 10px;
-}
+
 .input-new-tag {
   width: 120px;
 }

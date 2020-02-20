@@ -27,3 +27,15 @@ body,
 .el-cascader-panel {
     height: 200px;
 }
+
+.el-step__title {
+    font-size: 14px;
+}
+
+.el-tag {
+    margin: 0 10px 10px 0;
+}
+
+.ql-editor {
+    min-height: 300px;
+}
