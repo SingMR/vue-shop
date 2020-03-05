@@ -31,8 +31,8 @@ export default {
         return {
             // 这是登录表单的数据绑定对象
             loginForm:{
-                username:'admin',
-                password:'123456'
+                username: 'admin',
+                password: '123456'
             },
             // 表单验证规则对象
             loginFormRulers:{
@@ -53,9 +53,9 @@ export default {
         submitForm(formName) {
             // 表单预验证
         this.$refs[formName].validate( async valid => {
-            // valid 为boolean
+            // valid 为boolean         
           if (valid) {
-            const {data:res} = await this.$http.post('login',this.loginForm);
+            const {data: res} = await this.$http.post('login',this.loginForm);       
             if(res.meta.status != 200) return this.$message.error('错了哦,登录失败')                       
             this.$message.success('恭喜你,登录成功')
             // 1.将登录成功之后 token，保存到客户端的sessionStorage中
